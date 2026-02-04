@@ -2,8 +2,9 @@
 #include <string.h>
 #include <ctype.h>
 
-int main(){
-    char kalimat[1024],hasil[1024];
+int main()
+{
+    char kalimat[1024], hasil[1024];
     int pilihan = 0;
     while (pilihan != 4)
     {
@@ -18,42 +19,70 @@ int main(){
         switch (pilihan)
         {
         case 1:
+        {
+            printf("=============================\n\n");
             printf("Masukan Kalimat : ");
-            fgets(kalimat,sizeof(kalimat),stdin);
-            for(int i = 0;kalimat[i]!= '\0';i++){
+            fgets(kalimat, sizeof(kalimat), stdin);
+            int i;
+            for (i = 0; kalimat[i] != '\0'; i++)
+            {
                 hasil[i] = toupper(kalimat[i]);
             }
-            hasil[strlen(hasil)] = '\0';
-            printf("%s\n",hasil);
+            hasil[i] = '\0';
+            printf("%s\n", hasil);
+            printf("=============================\n\n");
+
             break;
+        }
         case 2:
+        {
+            printf("=============================\n\n");
+
             printf("Masukan Kalimat : ");
-            fgets(kalimat,sizeof(kalimat),stdin);
-            for(int i = 0;kalimat[i]!= '\0';i++){
+            fgets(kalimat, sizeof(kalimat), stdin);
+            int i;
+            for (i = 0; kalimat[i] != '\0'; i++)
+            {
                 hasil[i] = tolower(kalimat[i]);
             }
-            hasil[strlen(hasil)] = '\0';
-            printf("%s\n",hasil);
+            hasil[i] = '\0';
+            printf("%s\n", hasil);
+            printf("=============================\n\n");
+
             break;
+        }
         case 3:
+        {
+            printf("=============================\n\n");
+
             printf("Masukan Kalimat : ");
-            fgets(kalimat,sizeof(kalimat),stdin);
-            for(int i = 0;kalimat[i]!= '\0';i++){
-                if(isupper(kalimat[i])){
+            fgets(kalimat, sizeof(kalimat), stdin);
+            int i;
+            for (i = 0; kalimat[i] != '\0'; i++)
+            {
+                if (isupper(kalimat[i]))
+                {
                     hasil[i] = tolower(kalimat[i]);
-                }else if(islower(kalimat[i])){
+                }
+                else if (islower(kalimat[i]))
+                {
                     hasil[i] = toupper(kalimat[i]);
-                }else{
+                }
+                else
+                {
                     hasil[i] = kalimat[i];
                 }
             }
-            hasil[strlen(hasil)] = '\0';
-            printf("%s\n",hasil);
+            hasil[i] = '\0';
+            printf("%s\n", hasil);
+            printf("=============================\n\n");
+
             break;
+        }
         default:
             break;
         }
     }
-    
+
     return 0;
 }
