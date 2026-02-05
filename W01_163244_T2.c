@@ -1,13 +1,19 @@
 #include <stdio.h>
-#define MERAH "\033[31m"
-#define BOLD "\033[1m"
-#define YELLOW "\033[33m"
-#define RESET "\033[0m"
-#define CETAK_JUDUL(teks) printf("=== " BOLD teks RESET " ===\n")
+
+//--- Konfigurasi Warna & Tampilan (UI) ---
+#define ALERT_RED "\033[31m"
+#define STYLE_BOLD "\033[1m"
+#define HINT_YELLOW "\033[33m"
+#define FORMAT_RESET "\033[0m"
+#define APP_HEADER(teks) printf("=== " STYLE_BOLD teks FORMAT_RESET " ===\n")
+
+#define LINE printf("=============================\n\n")
+
+//--- Fungsi Input Matriks ---
 void inputMatriks(int matriks[][3], char *judul)
 {
-    printf("=== " BOLD "INPUT MATRIKS %s 3x3" RESET " ===\n", judul);
-    printf(YELLOW "(Ketik 3 angka per baris (Contoh: 1 2 3)\n" RESET);
+    printf("=== " STYLE_BOLD "INPUT MATRIKS %s 3x3" FORMAT_RESET " ===\n", judul);
+    printf(HINT_YELLOW "(Ketik 3 angka per baris (Contoh: 1 2 3)\n" FORMAT_RESET);
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
@@ -17,6 +23,8 @@ void inputMatriks(int matriks[][3], char *judul)
         printf("\n");
     }
 }
+
+//--- Operasi Perkalian ---
 void perkalianMatriks(int first[][3], int second[][3])
 {
     int hasil[3][3];
@@ -31,7 +39,7 @@ void perkalianMatriks(int first[][3], int second[][3])
             }
         }
     }
-    CETAK_JUDUL("HASIL PERKALIAN MATRIKS");
+    APP_HEADER("HASIL PERKALIAN MATRIKS");
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
@@ -40,8 +48,10 @@ void perkalianMatriks(int first[][3], int second[][3])
         }
         printf("\n");
     }
-    printf("=============================\n\n");
+    LINE;
 }
+
+//--- Operasi Penjumlahan ---
 void penjumlahanMatriks(int first[][3], int second[][3])
 {
     int hasil[3][3];
@@ -52,7 +62,7 @@ void penjumlahanMatriks(int first[][3], int second[][3])
             hasil[i][j] = first[i][j] + second[i][j];
         }
     }
-    CETAK_JUDUL("HASIL PENJUMLAHAN MATRIKS");
+    APP_HEADER("HASIL PENJUMLAHAN MATRIKS");
 
     for (int i = 0; i < 3; i++)
     {
@@ -62,8 +72,10 @@ void penjumlahanMatriks(int first[][3], int second[][3])
         }
         printf("\n");
     }
-    printf("=============================\n\n");
+    LINE;
 }
+
+//--- Operasi Transpose ---
 void transposeMatriks(int first[][3], int second[][3])
 {
     int hasil1[3][3], hasil2[3][3];
@@ -75,7 +87,7 @@ void transposeMatriks(int first[][3], int second[][3])
             hasil2[i][j] = second[j][i];
         }
     }
-    CETAK_JUDUL("TRANSPOSE MATRIKS PERTAMA");
+    APP_HEADER("TRANSPOSE MATRIKS PERTAMA");
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
@@ -84,7 +96,7 @@ void transposeMatriks(int first[][3], int second[][3])
         }
         printf("\n");
     }
-    CETAK_JUDUL("TRANSPOSE MATRIKS KEDUA");
+    APP_HEADER("TRANSPOSE MATRIKS KEDUA");
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
@@ -93,8 +105,10 @@ void transposeMatriks(int first[][3], int second[][3])
         }
         printf("\n");
     }
-    printf("=============================\n\n");
+    LINE;
 }
+
+//--- Program Utama ---
 int main()
 {
     int firstMatriks[3][3], secondMatriks[3][3];
@@ -103,7 +117,7 @@ int main()
     inputMatriks(secondMatriks, "KEDUA");
     while (pilihan != 4)
     {
-        CETAK_JUDUL("MENU");
+        APP_HEADER("MENU");
         printf("1. Perkalian Dua Buah Matrix\n");
         printf("2. Penjumlahan Dua Buah Matrix\n");
         printf("3. Transpose Dua Buah Matrix\n");
@@ -111,8 +125,8 @@ int main()
         printf("Pilihan : ");
         if (scanf("%d", &pilihan) == 0)
         {
-            printf(MERAH BOLD "Error! Harap Masuk Angka Sesuai Menu\n" RESET);
-            printf("=============================\n\n");
+            printf(ALERT_RED STYLE_BOLD "Error! Harap Masuk Angka Sesuai Menu\n" FORMAT_RESET);
+            LINE;
             while (getchar() != '\n')
                 ;
 
@@ -131,6 +145,8 @@ int main()
         case 3:
             transposeMatriks(firstMatriks, secondMatriks);
             break;
+        case 4:
+            printf(STYLE_BOLD HINT_YELLOW "\n=== TERIMA KASIH MENGGUNAKAN SISTEM SAYA ⊂◉‿◉つ ===\n" FORMAT_RESET);
         default:
             break;
         }
