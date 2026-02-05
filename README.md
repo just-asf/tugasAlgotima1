@@ -31,7 +31,7 @@ Program untuk melakukan operasi matematika pada dua buah matriks ordo 3x3 dengan
 * ✖️ **Perkalian Matriks:** Menghitung hasil kali dua matriks (Baris × Kolom).
 * ➕ **Penjumlahan Matriks:** Menjumlahkan elemen pada posisi yang sama.
 * 🔄 **Transpose Matriks:** Memutar posisi baris menjadi kolom.
-* 👤**User Friendly Input: User**: dipandu untuk memasukkan input agar tidak bingung.
+* 👤 **User Friendly Input: User**: dipandu untuk memasukkan input agar tidak bingung.
 
 ---
 
@@ -56,6 +56,6 @@ gcc W01_163244_T2.c -o matrix_app
 ---
 
 🛠️ Catatan Teknis
-**Program ditulis menggunakan Bahasa C standar.**
-*🚨 **Validasi Input**: Setiap menu angka dilindungi oleh validasi scanf untuk mencegah program crash jika user menginput huruf.
-*🧩 **Modular**: Kode dipisah menjadi fungsi-fungsi kecil agar mudah dibaca (clean code).
+* **Program ditulis menggunakan Bahasa C standar.**
+* 🚨 **Validasi Input**: Setiap menu angka dilindungi oleh validasi scanf untuk mencegah program crash jika user menginput huruf.
+* 🧩 **Modular**: Kode dipisah menjadi fungsi-fungsi kecil agar mudah dibaca (clean code).
