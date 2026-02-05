@@ -3,7 +3,7 @@
 Repository ini berisi *source code* penyelesaian dua studi kasus algoritma menggunakan bahasa C. Program dirancang dengan antarmuka CLI yang interaktif, berwarna, dan validasi input yang aman.
 
 ## 👤 Identitas Mahasiswa
-* **Nama:** MUHAMMAD ASHFA
+* **Nama:** Muhammad Ashfa
 * **NIM:** 00000163244
 * **Mata Kuliah:** Algoritma dan Pemrograman
 
