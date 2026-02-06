@@ -55,7 +55,7 @@ gcc W01_163244_T2.c -o matrix_app
 
 ---
 
-🛠️ Catatan Teknis
+### 🛠️ Catatan Teknis
 * **Program ditulis menggunakan Bahasa C standar.**
 * 🚨 **Validasi Input**: Setiap menu angka dilindungi oleh validasi scanf untuk mencegah program crash jika user menginput huruf.
 * 🧩 **Modular**: Kode dipisah menjadi fungsi-fungsi kecil agar mudah dibaca (clean code).
